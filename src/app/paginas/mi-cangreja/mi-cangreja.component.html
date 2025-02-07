@@ -1,0 +1,46 @@
+<div class="principal">
+  <div class="cont-principal">
+    <div class="contenedor-corazones">
+      <div class="corazon" style="left: 10%; animation-delay: 0s;"></div>
+      <div class="corazon" style="left: 30%; animation-delay: 1s;"></div>
+      <div class="corazon" style="left: 50%; animation-delay: 2s;"></div>
+      <div class="corazon" style="left: 70%; animation-delay: 1.5s;"></div>
+      <div class="corazon" style="left: 90%; animation-delay: 0.5s;"></div>
+    </div>
+    
+    <div class="cont-sv">
+      <span class="nombre-animado">Camila Alejandra Rosas Rojas, alias mi anticucho</span>
+      <p class="pregunta-animada">¿Quieres ser mi San Valentín este 14 de Febrero? 💝</p>
+    </div>
+    
+    <div class="botones">
+      <button 
+        class="boton-si"
+        [class.mas-grande]="contadorNo > 0"
+        (click)="alPresionarSi()"
+      >
+        ¡SIIIIIIIIIIII! 💖
+      </button>
+      
+      <button 
+        class="boton-no"
+        [class.muy-pequeno]="contadorNo === palabras.length - 1"
+        [disabled]="contadorNo === palabras.length - 1"
+        (click)="alPresionarNo()"
+        [style.transform]="'scale(' + (1 - contadorNo * 0.1) + ')'"
+      >
+        {{botonNoActual}}
+      </button>
+    </div>
+
+    <div *ngIf="mensajeExito" class="mensaje-exito">
+      <div class="corazones-exito">
+        <div class="corazon-exito"></div>
+        <div class="corazon-exito"></div>
+        <div class="corazon-exito"></div>
+      </div>
+      <h2>Gracias por aceptar mi cangreja hermosa 💕 sera un dia increible mi amor !!!!!!🥳🥳🥳</h2>
+      <p>Te amo y te quiero muchísimo amor de mi vida 💖</p>
+    </div>
+  </div>
+</div>
