@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { CommonModule, NgIf } from '@angular/common';
 import { trigger, state, style, transition, animate } from '@angular/animations';
@@ -47,11 +46,13 @@ export class MiCangrejaComponent {
   contadorNo = 0;
   mensajeExito = false;
   botonNoActual = this.palabras[0];
+  escalaBotonSi = 1;
 
   alPresionarNo() {
     if (this.contadorNo < this.palabras.length - 1) {
       this.contadorNo++;
       this.botonNoActual = this.palabras[this.contadorNo];
+      this.escalaBotonSi += 0.2;
     }
   }
 
